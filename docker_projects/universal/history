@@ -1,0 +1,148 @@
+    1  lsb_releas -a
+    2  lsb_release -a
+    3  ls
+    4  la ~
+    5  la ~/.ssh/
+    6  ls -a /home/codespace/
+    7  ls -a /home/codespace/.ssh/
+    8  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    9  ls -a /home/codespace/
+   10  ls -alht /home/codespace/
+   11  ls -alht /home/codespace/.kube/
+   12  chown -R codespace:codespace /home/codespace/.kube
+   13  sudo chown -R codespace:codespace /home/codespace/.kube
+   14  ls -alht /home/codespace/.kube/
+   15  ls -alht /home/codespace/
+   16  ls -alht /home/codespace/.kube/
+   17  ls
+   18  ls helm-v3.16.1-linux-amd64/
+   19  ls helm-v3.16.1-linux-amd64/linux-amd64/
+   20  echo $PATH
+   21  rsync -vaz helm-v3.16.1-linux-amd64/linux-amd64/helm /home/codespace/.local/bin/
+   22  kubectl cluster-info
+   23  kubectl cluster-info dump
+   24  ll
+   25  git clone ssh://git@git.services.aquilaheywood.co.uk:7999/helm/jenkins.git
+   26  ll
+   27  cd jenkins/
+   28  ll
+   29  git branch -vvv
+   30  git checkout SM_ADMN_26627
+   31  ..
+   32  cd ..
+   33  ll
+   34  git clone ssh://git@git.services.aquilaheywood.co.uk:7999/~smoulem/sandboxjenkins.git
+   35  ll
+   36  git clone ssh://git@git.services.aquilaheywood.co.uk:7999/~smoulem/sandboxjenkins.git --branch SM_ADMN_26627
+   37  ll sandboxjenkins/
+   38  rm -rf sandboxjenkins/
+   39  git clone ssh://git@git.services.aquilaheywood.co.uk:7999/~smoulem/sandboxjenkins.git --branch SM_ADMN_26627 
+   40  cd sandboxjenkins/
+   41  ll
+   42  helm install --name sandbox
+   43  ls -alht /home/codespace/
+   44  chmod 700 /home/codespace/.kube
+   45  ls -alht /home/codespace/.kube/
+   46  chmod -R 700 /home/codespace/.kube
+   47  ls -alht /home/codespace/.kube/
+   48  helm install --name sandbox
+   49  helm install --name sandbox .
+   50  helm
+   51  helm help install
+   52  kubectl get pods sandbox-jenkins-0
+   53  kubectl --context cluster02 delete pod sandbox-jenkins-0
+   54  git remote -vvv
+   55  git status
+   56  git add Jenkinsfile-sandbox-upgrade 
+   57  git status
+   58  git diff
+   59  git status
+   60  git commit -m "Add log output to Jenkins-sandbox-upgrade"
+   61  git remote -vvv
+   62  git push -u origin SM_ADMN_26627 
+   63  git status
+   64  git diff Jenkinsfile-sandbox-upgrade
+   65  git add Jenkinsfile-sandbox-upgrade
+   66  git status
+   67  git commit -m "Fix exception in Jenkins-sandbox-upgrade"
+   68  git push -u origin SM_ADMN_26627 
+   69  git status
+   70  git add Jenkinsfile-sandbox-upgrade
+   71  git commit -m "Change order of apply/delete in Jenkins-sandbox-upgrade"
+   72  git diff --cached
+   73  git diff --index
+   74  git diff
+   75  git status
+   76  git add Jenkinsfile-sandbox-upgrade
+   77  git diff --cached
+   78  git status
+   79  git commit -m "Change order of apply/delete in Jenkins-sandbox-upgrade"
+   80  git log
+   81  git reflog
+   82  git log
+   83  git push -u origin SM_ADMN_26627 
+   84  ls ..
+   85  ls ../..
+   86  ls ..
+   87  pushd ..
+   88  ll
+   89  wget -c https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz
+   90  ll
+   91  tar tvf k9s_Linux_amd64.tar.gz 
+   92  tar xvf k9s_Linux_amd64.tar.gz 
+   93  ll
+   94  mkdir k9s
+   95  mv LICENSE README.md k9s k9s/
+   96  ll
+   97  mkdir k9s.d
+   98  mv LICENSE README.md k9s k9s.d
+   99  ll#
+  100  ll
+  101  rm k9s_Linux_amd64.tar.gz 
+  102  la ~/.local/bin/
+  103  ll ~/.local/bin/
+  104  ll ~/.local/bin/helm 
+  105  rm ~/.local/bin/helm 
+  106  ls
+  107  ln -s helm-v3.16.1-linux-amd64/linux-amd64/helm ~/.local/bin/
+  108  ll ~/.local/bin/helm 
+  109  ln -s k9s.d/k9s ~/.local/bin/
+  110  k9s
+  111  ll ~/.local/bin/
+  112  ll k9s.d/
+  113  rm ~/.local/bin/helm 
+  114  rm ~/.local/bin/k9s 
+  115  rsync -vaz  k9s.d/k9s ~/.local/bin/
+  116  rsync -vaz  helm-v3.16.1-linux-amd64/linux-amd64/helm  ~/.local/bin/
+  117  k9s
+  118  clear
+  119  git diff
+  120  git status
+  121  ls
+  122  cd sandboxjenkins/
+  123  git status
+  124  clear
+  125  diff Jenkinsfile-upgrade Jenkinsfile-sandbox-upgrade 
+  126  git log
+  127  git push -u origin SM_ADMN_26627 
+  128  k9s
+  129  git push -u origin SM_ADMN_26627 
+  130  helm --kube-context cluster02 upgrade sandbox -f values-sandbox.yaml . --wait --reuse-values
+  131  kubectl --context cluster02 get configmap sandbox-jenkins -o jsonpath={.data.checksum}
+  132  kubectl --context cluster02 delete pod sandbox-jenkins-0
+  133  kubectl --context cluster02 delete pod devops-jenkins-0
+  134  diff values-sandbox.yaml values-devops.yaml 
+  135  helm --kube-context cluster02 upgrade devops -f values-devops.yaml . --wait --reuse-values
+  136  helm --kube-context cluster02 upgrade devops-jenkins -f values-devops.yaml . --wait --reuse-values
+  137  helm --kube-context cluster02 upgrade devops-jenkins-0 -f values-devops.yaml . --wait --reuse-values
+  138  helm list
+  139  helm --kube-context cluster02 list
+  140  helm show all
+  141  helm list --all
+  142  git log --oneline
+  143  git push -u origin SM_ADMN_26627 
+  144  kubectl --context cluster02 delete pod devops-jenkins-0
+  145  history
+  146  ls ..
+  147  echo date
+  148  history >> ../history

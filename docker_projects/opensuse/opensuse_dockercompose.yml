@@ -1,0 +1,6 @@
+services:
+  opensuse:
+    image: sammy/opensuse
+    build: 
+      context: ../../empty_folder
+      dockerfile: ./opensuse_dockerfile

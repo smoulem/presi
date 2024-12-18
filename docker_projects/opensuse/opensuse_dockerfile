@@ -1,0 +1,59 @@
+# FROM opensuse/tumbleweed
+FROM opensuse/leap:15.6
+
+## fish shell 
+RUN zypper --non-interactive addrepo https://download.opensuse.org/repositories/shells:fish:release:3/15.6/shells:fish:release:3.repo
+RUN zypper --gpg-auto-import-keys refresh
+RUN zypper --non-interactive install fish
+## some utils
+RUN zypper --non-interactive install curl
+RUN zypper --non-interactive install wget
+RUN zypper --non-interactive install git
+RUN zypper --non-interactive install awk
+RUN zypper addrepo https://download.opensuse.org/repositories/Archiving/15.6/Archiving.repo
+RUN zypper --gpg-auto-import-keys refresh
+RUN zypper --non-interactive install unzip
+RUN zypper --non-interactive install zip
+RUN zypper --non-interactive install tar
+RUN zypper --non-interactive install sudo
+RUN zypper --non-interactive install tmux
+RUN zypper --non-interactive install tree
+RUN zypper --non-interactive install --type pattern devel_basis
+RUN zypper --non-interactive install system-group-wheel
+## add user
+ARG MY_USER="opensuse"
+RUN useradd --system --create-home --groups wheel --shell /bin/fish $MY_USER
+## powerline fonts
+RUN zypper addrepo https://download.opensuse.org/repositories/utilities/15.6/utilities.repo
+RUN zypper --gpg-auto-import-keys refresh
+RUN zypper --non-interactive install powerline
+## powerline fonts
+RUN wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+RUN wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+RUN mkdir -p ~/.local/share/fonts/
+RUN mv PowerlineSymbols.otf ~/.local/share/fonts/
+RUN fc-cache -vf ~/.local/share/fonts/
+RUN mkdir -p ~/.config/fontconfig/conf.d/
+RUN mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+##
+USER $MY_USER
+WORKDIR /home/$MY_USER
+COPY .ssh /home/$MY_USER/.ssh
+## sdkman
+RUN curl -s "https://get.sdkman.io" | bash
+## oh my fish
+RUN curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+RUN fish install --noninteractive
+RUN rm install
+## theme agnoster - fish
+RUN fish -c 'omf install agnoster' 
+RUN fish -c 'omf theme agnoster'
+## 
+RUN mkdir ~/app
+WORKDIR /home/$MY_USER/app
+## volumes
+# VOLUME /home/$MY_USER
+# VOLUME /home/$MY_USER/app
+# VOLUME /root
+##
+# ENTRYPOINT 
