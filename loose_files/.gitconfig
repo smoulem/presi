@@ -1,0 +1,12 @@
+[user]
+	name = Samuel Moulem
+	email = sam.moulem@heywood.co.uk
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[credential "https://git.services.aquilaheywood.co.uk"]
+	provider = bitbucket
+[core]
+	autocrlf = true

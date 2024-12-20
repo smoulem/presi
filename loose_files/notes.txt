@@ -1,0 +1,614 @@
+
+log.5 xps 
+INFO   | jvm 1    | 2024/11/07 15:25:16.345 | 2024-11-07 15:25:16,310 INFO  Completed Member Extract for client MIDBRO. Full name uk.co.heywood.business.javabatch.programs.PS5280BatchJob [uk.co.heywood.business.javabatch.JavaBatchRunnerBeanHelper] (RMI TCP Connection(6324)-10.184.3.17)
+INFO   | jvm 1    | 2024/11/07 15:25:16.446 | 2024-11-07 15:25:16,395 INFO  About to run Member Extract Report($Revision: 2017-11-01 00:00:00 $) [E:\altair\XPS01P\data\clients\MIDBRO\reports\processes\PS5280.rptdesign] [uk.co.heywood.altair.reporting.birt.BirtReportRunner] (RMI TCP Connection(6324)-10.184.3.17)
+INFO   | jvm 1    | 2024/11/07 15:25:18.875 | 2024-11-07 15:25:18,815 INFO  Completed Report Member Extract Report [uk.co.heywood.altair.reporting.birt.BirtReportRunner] (RMI TCP Connection(6324)-10.184.3.17)
+
+# Kent
+.log 
+INFO   | jvm 1    | 2024/11/14 10:08:08.983 | java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+Seen a couple of data extract taking longer: PS5280BatchJob
+Searched for 'timed out' 
+Searched for 'duration' longer than usual 
+Searched for Exception and ERROR 
+Searched for '(Calc)'
+Contacted Seth regarding possible 'heap dump' 
+Contacted Nathan Kane - who worked on the prb - regarding findings
+
+Some 'timed out' after running 'Member Extract' at 15:23
+Searched for 'timed out' at 15:23 
+Searched for 'timed out' at 15:25 
+Searched for 'connection has timed out'
+
+The 'Association' tab of the ticket shows 2 linked incidents.
+Comments in the PRB and INC seems to show slowness when large member extracts are done.  
+searched for data extracts; looked at member extracts taking longer 
+There are a couple of member extracts at 15:23
+PS5280BatchJob> [done in 193310ms]
+PS5280BatchJob> [done in 418057ms]
+PS5280BatchJob> [done in 383378ms]
+PS5280BatchJob> [done in 127611ms]
+and at 15:25
+PS5280BatchJob> [done in 116694ms]
+PS5280BatchJob> [done in 125202ms]
+Searched jobs having duration of more than 500ms.
+There seems to be 1053 of them, though they don't necessarily lead to 'time out'.
+Kent 
+Some 'time out' at around 08:00-09:30 14:00-14:30 and 15:00-15:30
+Cannot attribute it to a specific 
+
+
+Tu 17/12/2024 
+merged from and to raya <-> integration
+workflow reminders; go through code.
+
+
+Md 16/12/2024
+write what's been done analysing the logs of the PRB. 
+
+
+Fd 14/12/2024
+quarterly planning day, in the office 
+contribute to planning session by steering the debate and help to identify potential risks. 
+
+
+Th 12/12/2024 
+start looking at 
+get the logs 
+start parsing the logs for errors 
+go through case history on service desk 
+get in touch with Nathan Kane, from infra, who has looked at it as some point 
+'kent' log file: \\ahnet.co.uk\Departments\ServiceOperations\Team\Customers\Kent\Kent_inc153492.zip
+join call with Mukhtar and Jake to see if this is common to their case as well: 
+
+
+Wed 11/12/2024 
+demo of what was done for: https://heywood.atlassian.net/browse/ADMN-28125
+(track update in sources)
+prepare demo for 1-2-1
+raise incident for webcam 'random' behaviour: Incident Management INC154453 Viewing a Record
+
+automatic merge into integration: R25_1 -> integration
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair-testing/commits/7bb918730169bb6180cedb7b43d43eb17b6967a9
+
+from conversation 121 meeting:
+early refinememnt; some of the lessons learned from that ticker. after meeting I thought, I don't think the ticket went through refinement. 
+speak to people in the company, lead on BOs; again, something along related to refinement. I'm thinking, who had ownerhsip of that ticket. 
+new starter aggregation workflow; topic for demo on funcional aspect of Altair 
+ui tests to integration tests; ci work I volunteer to look at. 
+
+Tue 10/12/2024
+fix data for failing xrt tests:
+https://heywood.atlassian.net/browse/ADMN-28745
+https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2019/job/RerunXRTTestsChrome/job/R25_1/12/testReport/uk.co.heywood.testing.regression/RetirementBasicDetailIT/testRetirementBasicDetail__/
+
+identifiy reason for test failure 
+find xrt data 
+edit data accordingly; error and trial ; run tests locally.
+liaise with stakeholders: Ian Jenkinson, Nicole, John  
+create pr and have call with Ian 
+
+Mnd 09/12/2024
+code review; aws mustest budget increase: https://heywood.atlassian.net/browse/ADMN-28586
+xrt failing test : https://heywood.atlassian.net/browse/ADMN-28745
+identified the issue with failing xrt tests; located the tests data, implemented the solution.
+active participation, refinement meeting; asking questions about tickets objective and potential difficulties. 
+
+
+Fri 06/12/2024 
+debug xrt test on R25_1 : 
+review training guide 
+start draft edits of training guide 
+think of blog article 
+think of presentation about functional area of altair 
+
+- write training guide 
+- review training guide 
+- fix altair git commits  
+- fix altair app not starting 
+- write atlassian article? 
+- make repeateable dev envt 
+
+./gradlew :AltairRunner:run :AltairJcbRunner:run --scan
+:AltairJcbRunner:run
+
+=
+Thu 05/12/2024 
+https://heywood.atlassian.net/browse/ADMN-28125
+getting the above ticket over the line before the code cut off at the end of the day 
+pairing/mobbing, in the morning, to get the failing tests pass, to squash commits, to remove changes to data view 
+call with Luke and Ashleigh about how to get to the 'employment screen' and regarding 'defects' in the data view. 
+check the merge into raya and the builds, on the branch and raya. 
+progress reports to John 
+stayed connected in the afternoon, in case anything needed to be done with the above ticket. 
+we finished the ticket by 17:45, with Charlie and Omeed 
+
+
+Wed 04/12/2024 
+led on solution for https://heywood.atlassian.net/browse/ADMN-28125
+pairing: Louis, Charlie, Rob 
+afternoon: pairing on trying changes locally in altair: Louis, Charlie, John.
+Rob, in the background, tries to fix an failing test (latex).
+
+
+1 2 1  15:00 Matt, John 15:30 
+more funcional aspect of altair rather than technical 
+
+CI: not necessarily something that can be completed within 8 weeks. 
+
+=
+Tue 03/12/2024 
+360 Charlie 
+refine user story, get Omeed, Jamie, Dave on a call : led the way on determining what needs to be done 
+led on trying to get a solution to add source to payroll elem history : pairing; Louis, John 
+https://heywood.atlassian.net/browse/ADMN-28125
+
+
+
+=
+Mon 02/12/2024
+training guide in early morning 
+pairing with Louis on schema change; lead on making chnage with heywoodmango.
+Jake joins on data view and data accessor change: lead on making code testable and defining what to do.  
+https://heywood.atlassian.net/browse/ADMN-28125
+
+=
+Fri 29/11/2024
+pairing on 'java access' with Louis: lead on what to do and solution. 
+https://heywood.atlassian.net/browse/ADMN-27745
+proposed the solution in initial call, then split before lunch time  
+prepared 1 2 1 during early afternoon.
+re-paired on above ticket and lead on testing, pulling Jake in, before pr is submitted. 
+
+code review 'retirement basic details' altair code change.
+=
+Thu 28/11/2024
+Hive Live 
+catching up on comms and work done during previous 2 days 
+start reviewing specific areas of training guide 
+
+=
+Wed 27/11/2024
+day off 
+
+=
+Tue 26/11/2024
+day off 
+
+=
+Mon 25/11/2024
+pairing with Louis on 'retirement basic details' integration tests 
+https://heywood.atlassian.net/browse/ADMN-28109
+parameterize integration tests on 
+comms with Charlie on building branch, unit tests. 
+lead on diagnosing incompatible code version on IT and 'local altair'.
+
+=
+Fri 22/11/2024
+
+=
+Thu 21/11/2024
+
+=
+Wed 20/11/2024
+
+=
+Tue 19/11/2024
+
+=
+Mon 18/11/2024
+
+=
+04/11/2024
+benchmarking tests on integration Int Win2019 2025.1.54 : all 8  failures are 'missed targets' 
+
+starting job rerun ui test INT Win2026 1 failure, not sure why.
+
+Windows Server 2019
+Rerun UI Tests (Edge)
+integration
+16 failures
+not sure why, the errors are 'marked' as regression 
+
+looked at xrt 6 failures 
+Windows Server 2019
+Rerun XRT Tests (Chrome)
+integration
+
+looked at the SPPA pod failure 
+the job was running 
+looked at the logs and  pipeline script and various stages:
+'Build 'vsphere-clone' errored after 2 hours 50 minutes: Error executing Chef: Non-zero exit status: 1'
+
+05/11/2024
+
+-
+pr : abstract class in enum : https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/pull-requests/12219/overview?
+pr: https://heywood.atlassian.net/browse/ADMN-27691
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair-testing/pull-requests/10447/overview
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/pull-requests/12229/overview
+commentId=10293
+
+refinement input 05/11/2024 : https://heywood.atlassian.net/browse/ADMN-27743
+https://heywood.atlassian.net/browse/ADMN-27742
+https://heywood.atlassian.net/browse/ADMN-28145
+
+dashboard - dev support 
+
+
+rerun : https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2016_ORA_19/job/RunBenchmarkingTests/job/R24_4/
+Dashboard
+Altair
+Delivery
+Windows Server 2016 & Oracle 19c
+Run Benchmarking Tests
+R24_4
+
+
+06/11/2024 
+
+add new entry to 'issues being investigated' 
+
+refinement input on 06/11/2024 
+
+yesterday failed benchmarking tests on 24_4: 
+PayrollPeriodEndTest.timePayrollPeriodEnd,ReportWriterComplexCobolTest.timeReportWriterComplexTest,InvestmentResultsTest.testInvestmentResults,MemberRealignmentTest.timeMemberRealignment,PSUPayrollAcceptanceOfPIWithLocationTest.timePayrollAcceptanceOfPIWithLocation,PSUValuationPartialActualTest.timePSUValuationPartialActualTest,RunDesignerValuationTest.timeDesignerInterfaceRun,ABSProvisionalTest.timeABSProvisional,BACSExtractionTest.timeBACSExtraction,MemberContributionsImportTest.timeMemberContributionsImport,PSUValuationActualTest.timePSUValuationActualTest,PSUValuationProvisionalTest.timePSUValuationProvisionalTest,PayAdviceProductionTest.timePayAdviceProduction,PayrollCalculationTest.timePayrollCalculation,ProcessDesignerInterfaceProvisionalTest.timeDesignerInterfaceLoad
+
+today failed benchmarking tests on 24_4: 
+ABSActualTest.timeABSActual,BulkEDPDocumentGenerationTest.timeBulkEDPDocumentGeneration,BulkHistoriseTest.timeBulkHistorise,InvestmentInitiationTest.testInvestmentInitiation,MailshotsTest.timeMailshots,MovementsAnalysisTest.timeMovementsAnalysis,PSUPensionIncreaseWithLocationTest.timePensionsIncrease,PayrollAcceptanceOfPITest.timePayrollAcceptance,PensionsIncreaseActualTest.timePensionsIncrease,PensionsIncreaseProvisionalTest.timePensionsIncrease,ProcessDesignerInterfaceActualTest.timeDesignerInterfaceLoad,ReportWriterComplexJavaTest.timeReportWriterComplexTest,ReportWriterSimpleJavaTest.timeReportWriterSimpleReport,TaskCreationTest.timeProcedureCreation,PayrollPeriodEndTest.timePayrollPeriodEnd,ReportWriterComplexCobolTest.timeReportWriterComplexTest,InvestmentResultsTest.testInvestmentResults,MemberRealignmentTest.timeMemberRealignment,PSUPayrollAcceptanceOfPIWithLocationTest.timePayrollAcceptanceOfPIWithLocation,PSUValuationPartialActualTest.timePSUValuationPartialActualTest,RunDesignerValuationTest.timeDesignerInterfaceRun,ABSProvisionalTest.timeABSProvisional,BACSExtractionTest.timeBACSExtraction,MemberContributionsImportTest.timeMemberContributionsImport,PSUValuationActualTest.timePSUValuationActualTest,PSUValuationProvisionalTest.timePSUValuationProvisionalTest,PayAdviceProductionTest.timePayAdviceProduction,PayrollCalculationTest.timePayrollCalculation,ProcessDesignerInterfaceProvisionalTest.timeDesignerInterfaceLoad
+
+
+[PayrollPeriodEndTest.timePayrollPeriodEnd, ReportWriterComplexCobolTest.timeReportWriterComplexTest, InvestmentResultsTest.testInvestmentResults, MemberRealignmentTest.timeMemberRealignment, PSUPayrollAcceptanceOfPIWithLocationTest.timePayrollAcceptanceOfPIWithLocation, PSUValuationPartialActualTest.timePSUValuationPartialActualTest, RunDesignerValuationTest.timeDesignerInterfaceRun, ABSProvisionalTest.timeABSProvisional, BACSExtractionTest.timeBACSExtraction, MemberContributionsImportTest.timeMemberContributionsImport, PSUValuationActualTest.timePSUValuationActualTest, PSUValuationProvisionalTest.timePSUValuationProvisionalTest, PayAdviceProductionTest.timePayAdviceProduction, PayrollCalculationTest.timePayrollCalculation, ProcessDesignerInterfaceProvisionalTest.timeDesignerInterfaceLoad]
+
+
+06/11/2024 
+after meeting with Matt, joined call with Jake and Louis, joined call with Rob 
+
+07/11/2024
+pr call with Jake: 
+https://heywood.atlassian.net/browse/ADMN-27691
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair-testing/pull-requests/10447/diff#AltairIntegrationTesting/src/test/java/uk/co/heywood/business/workflow/autoexecutetask/AutoExecuteTaskIT.java
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/pull-requests/12229/diff#AltairCodebase/AltairBiz/unittest/uk/co/heywood/business/workflow/autoexecutetask/helpers/EmploymentAggregationHelperTest.java
+
+pr review: 
+https://heywood.atlassian.net/browse/ADMN-27693
+
+
+dashboard
+'failed to get results':
+Altair
+Delivery
+Windows Server 2019
+Run Benchmarking Tests
+integration
+
+
+08/11/2024
+code review x 3 
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/commits/a53cd0bd7581ec21c12fcb8f96dd82d2e4dd17cd
+
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/pull-requests/12269/overview
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair-testing/pull-requests/10456/overview
+
+dashboard sppa build failing 
+contacted Sophie, Brice 
+
+dashboard ui tests failing, rerun x 2  
+Altair
+Delivery
+Windows Server 2019
+Rerun UI Tests (Firefox)
+integration
+[
+10.7.57.34,10.7.56.208,10.7.57.4,10.7.56.194
+PensionerReconciliationReportTest.aUserCanRunPensionerReconciliationReportsOnMultiplePayrolls
+]
+
+Dashboard
+Altair
+Delivery
+Windows Server 2019
+Rerun UI Tests (Edge)
+
+escrow? 
+initial chat with Charlie 
+started the 'verify job' on R24_4 
+further chat and instruction from Charlie 
+joined the office call for clarification, with Jake John Charlie Louis 
+
+
+11/11/2024
+re run failed dashboard tests:
+BulkDocPrintBenCalcTest.userCanBulkPrintDocumentsFromAJavaBenefitCalculationOfMultipleDocumentIdsDetailReport,AutoExecuteTaskTest.givenActionsAreInsertViaTheUI_WhenTheActionsAreSaved_TheOrderIsPersistedAndUsed,AutoExecuteTaskTest.testWorkflowHistoryDetailIsDisplayedCorrectlyForAutoExecutableTasks
+
+on either of the 2 following 
+Altair
+Delivery
+Windows Server 2019
+Rerun UI Tests (Edge)
+integration
+
+run tests on raya branch a couple of times. try to rebuild a previously successful run (but tests fail). 
+Altair
+Delivery
+Windows Server 2016 & Oracle 19c
+Rerun UI Tests (Chrome)
+raya
+
+run the following locally 
+uk.co.heywood.testing.uitests.payroll.arrearscalculation.ElementHistoryMaintenanceTest.aNegativeValueCannotBeSavedForARateRecord()
+
+
+./gradlew :AltairCucumberFramework:clean :AltairCucumberFramework:runUiTests --refresh-dependencies -DBranch=integration -DHosts=10.7.57.34,10.7.56.208,10.7.57.4,10.7.56.194 -DCobolFree=false -Dbrowser=Firefox -DuseSeleniumGrid=true -DmailHost=cx-d-kub-t-11.altdev.ahnet.co.uk -DmailPort=30725 --tests NewPayeesAndDeletionReportTest --tests ElementHistoryMaintenanceTest.elementAmountCommencementDateAndCessationDateIsEditableAndElementRateRecordGridIsNotVisibleWhenPayrollArrearsFacilityIndicatorIsNotSet
+
+
+NDT meeting with stakeholders
+Debriefing afterwards
+
+help Mukhtar setup Altair 
+
+try to use local.properties and selenium grid to run ui tests and replicate the error seen from the dashboard = ?clearCoverage 
+
+try to run ui tests using the selenium grid; added local.properties, however, the test still run using my local web browser.
+then tried the following with gradle from the command line:
+ ./gradlew :AltairCucumberFramework:clean :AltairCucumberFramework:runUiTests --refresh-dependencies -DBranch=integration -DHosts=alt-smoulem.altdev.ahnet.co.uk -DCobolFree=false -Dbrowser=Firefox -DuseSeleniumGrid=true -DmailHost=cx-d-kub-t-11.altdev.ahnet.co.uk -DmailPort=30725 --tests NewPayeesAndDeletionReportTest --tests ElementHistoryMaintenanceTest.elementAmountCommencementDateAndCessationDateIsEditableAndElementRateRecordGridIsNotVisibleWhenPayrollArrearsFacilityIndicatorIsNotSet
+
+got the following result:
+Task :AltairCucumberFramework:runUiTests
+
+ElementHistoryMaintenanceTest > elementAmountCommencementDateAndCessationDateIsEditableAndElementRateRecordGridIsNotVisibleWhenPayrollArrearsFacilityIndicatorIsNotSet() STARTED
+
+ElementHistoryMaintenanceTest > elementAmountCommencementDateAndCessationDateIsEditableAndElementRateRecordGridIsNotVisibleWhenPayrollArrearsFacilityIndicatorIsNotSet() PASSED
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() PASSED
+
+
+NewPayeesAndDeletionReportTest > newPayeesAndDeletionsReportToHandlePayrollLinkedEmployments() PASSED
+11:00:08 unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=61549&host=10.7.201.140
+11:00:08 Successful in unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=61549&host=10.7.201.140
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.4.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 4m 34s
+9 actionable tasks: 4 executed, 2 from cache, 3 up-to-date
+
+
+
+12/11/2024
+failing ui tests:
+Altair
+Delivery
+Windows Server 2019
+Rerun UI Tests (Firefox)
+integration
+#195
+run UI tests locally, trying to use selenium grid:
+
+./gradlew :AltairCucumberFramework:clean :AltairCucumberFramework:runUiTests --refresh-dependencies -DBranch=integration -DHosts=alt-smoulem.altdev.ahnet.co.uk -DCobolFree=false -Dbrowser=Firefox -DuseSeleniumGrid=true -DmailHost=cx-d-kub-t-11.altdev.ahnet.co.uk -DmailPort=30725 --tests NewPayeesAndDeletionReportTest --tests PensionerReconciliationReportTest
+
+results:
+> Task :AltairCucumberFramework:runUiTests
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > newPayeesAndDeletionsReportToHandlePayrollLinkedEmployments() STARTED
+
+NewPayeesAndDeletionReportTest > newPayeesAndDeletionsReportToHandlePayrollLinkedEmployments() PASSED
+
+PensionerReconciliationReportTest > aUserCanRunPensionerReconciliationReportsOnMultiplePayrolls() STARTED
+
+PensionerReconciliationReportTest > aUserCanRunPensionerReconciliationReportsOnMultiplePayrolls() PASSED
+
+PensionerReconciliationReportTest > aUserCanScheduleAPensionerReconciliationReportToBeRun() STARTED
+
+PensionerReconciliationReportTest > aUserCanScheduleAPensionerReconciliationReportToBeRun() PASSED
+09:49:12 unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=49171&host=10.7.201.140
+09:49:12 Successful in unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=49171&host=10.7.201.140
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.4.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 5m 32s
+9 actionable tasks: 4 executed, 2 from cache, 3 up-to-date
+
+
+- the try to run the same tests with Edge browser:
+
+./gradlew :AltairCucumberFramework:clean :AltairCucumberFramework:runUiTests --refresh-dependencies -DBranch=integration -DHosts=alt-smoulem.altdev.ahnet.co.uk -DCobolFree=false -Dbrowser=Edge -DuseSeleniumGrid=true -DmailHost=cx-d-kub-t-11.altdev.ahnet.co.uk -DmailPort=30725 --tests NewPayeesAndDeletionReportTest --tests PensionerReconciliationReportTest
+
+results: 
+> Task :AltairCucumberFramework:runUiTests
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewAndDeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceADeletedPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() STARTED
+
+NewPayeesAndDeletionReportTest > produceANewPayeesReport() PASSED
+
+NewPayeesAndDeletionReportTest > newPayeesAndDeletionsReportToHandlePayrollLinkedEmployments() STARTED
+
+NewPayeesAndDeletionReportTest > newPayeesAndDeletionsReportToHandlePayrollLinkedEmployments() PASSED
+
+PensionerReconciliationReportTest > aUserCanRunPensionerReconciliationReportsOnMultiplePayrolls() STARTED
+
+PensionerReconciliationReportTest > aUserCanRunPensionerReconciliationReportsOnMultiplePayrolls() PASSED
+
+PensionerReconciliationReportTest > aUserCanScheduleAPensionerReconciliationReportToBeRun() STARTED
+
+PensionerReconciliationReportTest > aUserCanScheduleAPensionerReconciliationReportToBeRun() PASSED
+10:08:10 unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=57241&host=10.7.201.140
+10:08:10 Successful in unregistering JCB listener with Altair using URL http://alt-smoulem.altdev.ahnet.co.uk:16905/unregisterListener?port=57241&host=10.7.201.140
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.4.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 5m 6s
+9 actionable tasks: 4 executed, 2 from cache, 3 up-to-date
+
+repeateadly suggested pairing during standups 
+contrib sprint  retro 
+                planning and refinement of tickets that we refined during sprint planning 
+                suggested kick off on some tickets, as no one is sure about 'what to do'  
+call with John and Jake = kick off - ticket about creating a function 
+
+
+13/11/2024 
+pairing with Jake on schema change - creating new functions 
+
+1-2-1 with Matt 15:00 
+Mukhtar onboarding, process flow, tools, taining guide  
+pair with at least 2 other devs
+love and loathe : 3 things in each 
+
+dev support handover 16:00
+ran session 
+
+
+
+===
+===
+===
+
+week 18-22 november 2024
+pairing Jake create new sql view and functions sppa 
+pairing Charlie, Louis, retirement basic details, unit and integration tests 
+=
+
+wednesday 04/09/2024
+1 to 1 Matt Sam 15:00-15:30
+raise tickets for story: jenkins log to logstash 
+dev support:
+  investigate 
+  make sure people are on it 
+  there is a confluence page 'issues being investigated', update as needed. 
+  check what is red on the dashboards 
+  get volunteers to investigate issues. can be other teams 
+  if benchmarking tests have 'time target error... has missed target', re-run at a 'quiet' time.
+  'total chef nodes' => Matt to have a look 
+
+coaching frameword discussions, once a month (1 every 4 weeks)
+prepare next session, send chosen topic to Matt 
+=
+wednesday 04/09/2024 16:00-16:30
+Dev support hand over Mulan and Raya 
+mostly green 
+things mentioned:
+    issues have been assigned to people 
+    disk space issues? 
+    DUNDEE create image 
+    BDDEMO 
+
+=
+one to one on 21/08/2024 
+twice a year, review evidence to meet objective 
+end of year salary and bonus review process. 
+examples in objectives pdf, you can use other things as evidence.
+
+security training, jira, productive, devcon session, 
+
+graduate joining us, best practices, 
+suggest something to 'replace' codewars. 
+blog article? 
+work with stakeholders? 
+ci initiative?  
+subject matter expert?
+lead on live issues? 
+should we get security champions? if so, what should they do?
+buddying new starter? 
+=> cluster 02 jenkins, rancher logs . helm project repo on bitbucket , logstash already running? 
+
+##
+##
+what I mean it's; I think it's a kind of binary copy, at the file system level.
+
+it's not a sql dump with editable text; or a sql import.
+
+
+
+I'm double checking how those kind of database copy are made on oracle. 
+
+nonetheless, so far I don't see any human editable file, would it be the idx or other the other files without extensions.
+
+
+
+Also, some files don't actually come from the code repo (see below).
+
+In the extract below
+
+Are you 
+
+
+
+
+
+
+
+
+
+Text
+
+
+
+
+
+
+
+
+
+08:45:42 ====================================
+08:45:42 Copy of XRT base data to client area
+08:45:42 ====================================
+08:45:42 
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 09 December 2024 08:45:42
+   Source : \\regression.services.aquilaheywood.co.uk\data\filesystem\25016\
+     Dest : c:\altair\R25_1\data\clients\CCCCLG\
+
+    Files : *.*
+        
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /R:10 /W:30 
+
+------------------------------------------------------------------------------
+
+Expand (17 lines)

@@ -1,0 +1,759 @@
+Incident Management INC154453 Viewing a Record
+
+sonacloud api token: 49cbefd09e86e6a6f4d259847572ca7a60951d7e
+https://heywood.atlassian.net/browse/ADMN-24296
+https://heywood.atlassian.net/browse/ADMN-24689
+
+
+https://www.slideshare.net/slideshow/groovy-dsls-javaone-presentation/9588765#4
+
+@alt-smoulem
+alt-smoulem
+3521
+CHFDB01
+ALTAIR
+jdbc:oracle:thin:@alt-smoulem:3521:CHFDB01
+
+01/11/2024
+CX-D-CBA-T-02 back online 
+
+ui chrome 1 failure 
+Omeed 
+- e08ba0fa2f0b82688b041f43bb6e424aa60de2cd
+message to Omeed: https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2016/job/RerunUiTestsChrome/job/R24_4/28/
+
+ui chrome (2024.4) 2 failures 
+time out 
+
+benchmarking (2024.4) 12 failures  
+missed target 
+
+ui failure to get results 
+sophie 
+Revision: 854601925113cf8126dc26488ae040deceab5bfa
+https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2019/job/RerunUiTestsEdge/job/R24_4/14/
+
+
+=
+AMT folder 
+\\amt.services.aquilaheywood.co.uk\data
+
+=
+The difference would be: 
+we would have to edit values-dev.yaml before each upgrade/rollback. 
+We currently don’t need to edit values-dev.yaml when doing upgrades and rollback; instead, in the registry, we assign the tag ‘latest’ to a different Docker image. We then delete the Kubernetes pod; the pod is automatically re-created using the Docker image with the tag ‘latest’.
+
+grep -rno '*GEN*' logs
+
+my pc name 
+AL-L-1103.ahnet.co.uk 
+==
+visualvm.exe --jdkhome "C:\Software\Java\jdk1.6.0" --userdir "C:\Temp\visualvm_userdir"
+
+wrapper.java.additional.8=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:12999
+wrapper.java.additional.9=-Dcom.sun.management.jmxremote.port=8888
+wrapper.java.additional.10=-Dcom.sun.management.jmxremote.ssl=false
+wrapper.java.additional.11=-Dcom.sun.management.jmxremote.authenticate=false
+
+java -Dcom.sun.management.jmxremote.port=8888 \
+-Dcom.sun.management.jmxremote.ssl=false \
+-Dcom.sun.management.jmxremote.authenticate=false \
+-Xms1024m -Xmx1024m -jar MyApp.jar
+==
+
+https://opensource.com/article/20/11/git-aliases
+https://code.visualstudio.com/docs/devcontainers/create-dev-container
+https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount
+=
+https://github.com/rd-1-2022/ai-openai-helloworld
+
+https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/README.md
+https://www.google.com/search?q=promote+artefact+from+dev+nexus&sca_esv=7a2c727ac526d59d&sca_upv=1&rlz=1C1GCEU_enGB1099GB1099&ei=nvNqZtqxG8uyhbIPpvOJwAY&ved=0ahUKEwja-NGe19iGAxVLWUEAHaZ5AmgQ4dUDCBA&uact=5&oq=promote+artefact+from+dev+nexus&gs_lp=Egxnd3Mtd2l6LXNlcnAiH3Byb21vdGUgYXJ0ZWZhY3QgZnJvbSBkZXYgbmV4dXMyBRAhGKABMgUQIRigATIFECEYnwVIm05QAFjYSXAEeACQAQKYAYMGoAHbMKoBDzEyLjEzLjMuNS4xLjAuMbgBA8gBAPgBAZgCJaAChCnCAgsQABiABBiRAhiKBcICBRAAGIAEwgIFEC4YgATCAhEQLhiABBixAxjRAxiDARjHAcICCxAAGIAEGLEDGIMBwgIIEC4YgAQYsQPCAgoQABiABBhDGIoFwgIIEAAYgAQYsQPCAg0QABiABBixAxhDGIoFwgINEC4YgAQYsQMYQxiKBcICBhAAGBYYHsICCBAAGBYYHhgPwgIIEAAYFhgKGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIEECEYFcICBxAhGKABGAqYAwCSBwsxNS4xMy40LjQuMaAH0a8B&sclient=gws-wiz-serp#ip=1
+
+miro wheel of names
+uXjVMjxnK3k=/
+
+HR peoplehr => use samuel 
+=
+
+sonarcloud-login
+
+
+JENKINS_URL='https://jenkins-altdev.services.aquilaheywood.co.uk'
+JENKINS_USER='smoulem'
+API_TOKEN='1103ed76de0e5e93c75de22e8f2b022381'
+groovy_file='plugins.groovy'
+curl --verbose --include \
+--user "$JENKINS_USER:$API_TOKEN" \
+--data-urlencode "script=$(< ./plugins.groovy)" \
+"$JENKINS_URL/scriptText" 
+
+ssh-keygen -t rsa -b 4096 -C "samuel.moulem@heywood.co.uk"
+
+docker login -u aquilabuild -p aquilabuild nexus-altdev.services.aquilaheywood.co.uk
+
+
+https://heywood.atlassian.net/browse/ADMN-24898
+
+https://jenkins-altdev.services.aquilaheywood.co.uk/pipeline-syntax/globals
+
+=
+= created 
+https://heywood.atlassian.net/browse/ADMN-25319
+https://heywood.atlassian.net/browse/ADMN-25320
+=
+Incident Management INC148278
+cannot log into peopleHR - login might be wrongly set up
+=
+
+
+https://git.services.aquilaheywood.co.uk/projects/AL/repos/altair/pull-requests/11339/overview
+
+https://github.com/Heywood-Pension-Technologies/microservice-upgrade-service/pull/58
+
+https://duckduckgo.com/?q=emotional+music&va=c&t=hSANDRAo&iar=videos&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dqfl9VX5fAdY
+
+
+docker
+FHE8711F235D6
+
+ADMN-24330
+
+Squirrel24
+
+
+# altair 
+http://localhost:16891/heywood_runtime/runtime
+http://10.7.56.255:16891/heywood_runtime/runtime
+http://alt-smoulem.altdev.ahnet.co.uk:16891/heywood_runtime/runtime
+
+
+
+====
+=====
+=====
+ADMN-23932-sm 
+
+https://heywood.atlassian.net/jira/software/c/projects/ADMN/boards/346?selectedIssue=ADMN-23932
+https://heywood.atlassian.net/jira/software/c/projects/ADMN/boards/346?selectedIssue=ADMN-24402
+https://heywood.atlassian.net/jira/software/c/projects/ADMN/boards/346?selectedIssue=ADMN-24306
+https://heywood.atlassian.net/jira/software/c/projects/ADMN/boards/346?selectedIssue=ADMN-23916
+-----
+https://heywood.atlassian.net/browse/ADMN-25019
+=====
+
+[profile smoulem]
+aws_account_id = 850390975265
+region = eu-west-2
+output = json
+mfa_serial = arn:aws:iam::850390975265:mfa/auth_app
+color = ffaaee
+ 
+[profile lz-developer]
+source_profile = smoulem
+role_arn = arn:aws:iam::850390975265:role/lz-developer
+region = eu-west-2
+output = json
+ 
+[profile mustest]
+source_profile = smoulem
+role_arn = arn:aws:iam::923012622218:role/mus_tester
+region = eu-west-2
+output = json
+ 
+[profile musmgmt]
+source_profile = smoulem
+role_arn = arn:aws:iam::215265688243:role/mus
+region = eu-west-2
+output = json
+ 
+ 
+[profile musdev]
+source_profile = smoulem
+role_arn = arn:aws:iam::323417000105:role/mus
+region = eu-west-2
+output = json
+ 
+[profile musprod]
+source_profile = smoulem
+role_arn = arn:aws:iam::770469282652:role/mus
+region = eu-west-2
+output = json
+ 
+[profile muspreprod]
+source_profile = smoulem
+role_arn = arn:aws:iam::704593204449:role/mus
+region = eu-west-2
+output = json
+###########
+[profile smoulem]
+aws_account_id = 850390975265
+region = eu-west-2
+output = json
+mfa_serial = arn:aws:iam::850390975265:mfa/auth_app
+color = ffaaee
+ 
+[profile lz-developer]
+source_profile = smoulem
+role_arn = arn:aws:iam::850390975265:role/lz-developer
+region = eu-west-2
+output = json
+ 
+[profile mustest]
+source_profile = smoulem
+role_arn = arn:aws:iam::923012622218:role/mus_tester
+region = eu-west-2
+output = json
+ 
+[profile musmgmt]
+source_profile = smoulem
+role_arn = arn:aws:iam::215265688243:role/mus
+region = eu-west-2
+output = json
+ 
+ 
+[profile musdev]
+source_profile = smoulem
+role_arn = arn:aws:iam::323417000105:role/mus
+region = eu-west-2
+output = json
+ 
+[profile musprod]
+source_profile = smoulem
+role_arn = arn:aws:iam::770469282652:role/mus
+region = eu-west-2
+output = json
+ 
+[profile muspreprod]
+source_profile = smoulem
+role_arn = arn:aws:iam::704593204449:role/mus
+region = eu-west-2
+output = json
+
+
+https://docs.pact.io/implementation_guides/jvm/provider/gradle
+https://docs.pact.io/pact_broker/client_cli/readme
+https://softwaremill.com/contract-testing-with-pact/#:~:text=Publishing%20contracts%20to%20Pact%20Broker,on%20localhost%20on%20port%209292.&text=This%20allows%20publishing%20the%20contracts%20using%20pactPublish%20task.
+https://softwaremill.com/testing-microservices-contract-tests/?_gl=1*1pon8uz*_up*MQ..*_ga*MTc3OTUyMjY4Ny4xNzE5NDE1Njc1*_ga_6PWQQYCP28*MTcxOTQxODQwMC4yLjAuMTcxOTQxODQwMC4wLjAuMjAwMDk4NzEzNA..
+https://github.com/pact-foundation/pact-jvm/tree/master/provider/gradle#first-add-a-broker-configuration-block
+https://plugins.jenkins.io/aws-secrets-manager-credentials-provider/
+https://mvnrepository.com/artifact/software.amazon.awssdk/s3/2.26.9
+
+====
+https://heywood.atlassian.net/plugins/servlet/ac/com.thed.zephyr.je/general-search-test-executions?project.id=12049&issue.id=136280&execution.id=8cae91c0-130a-4f0d-8c50-d4f133512b74&zql=issue%20%3D%20ADMN-25853
+https://heywood.atlassian.net/plugins/servlet/ac/com.thed.zephyr.je/general-search-test-executions?project.id=12049&issue.id=136260&execution.id=966852b2-d175-4aba-88f1-0e7682ebeb46&zql=issue%20%3D%20ADMN-25846
+
+
+==
+Musprod
+api-gateway-logs-role
+vpc-0c0d83853c7f1e8ac-flow-logs-role
+github-actions-default-role
+musmgmt
+github-actions-default-role
+
+
+=====
+==
+==
+==
+SRDOCGEN
+
+
+Application > Maintenance > Configuration and Maintenance > Workflow >
+
+
+github, docker, jetbrains...
+sammymoulem
+sam.moulem@heywood.co.uk
+'the magic phrase'
+toi...
+
+atlassian  aha
+M....xx!
+1NEKE24O1KRSE76JEC4OFFMQ  // ???
+
+Squirrel24 
+
+CCCCLG/SANDRA
+SANDRA
+CCCCBA/SHEILA
+SHEILA
+
+http://localhost:16891/heywood_runtime/runtime
+http://10.7.56.255:16891/heywood_runtime/runtime
+http://alt-smoulem.altdev.ahnet.co.uk:16891/heywood_runtime/runtime
+
+http://alt-lwalsh.altdev.ahnet.co.uk:16891/heywood_runtime/runtime
+
+
+JAVA_ARGS=-Duser.language=fr -Duser.region=FR %JAVA_ARGS%
+-Duser.language=en
+-Duser.country=US
+-Duser.variant=US
+LOCALE_ARGS="-Duser.language=en -Duser.country=US -Duser.variant=US -Duser.region=US"
+GRADLE_OPTS=""
+GRADLE_OPTS="-Duser.language=en;-Duser.variant=en_US;-Duser.country=US"
+-Duser.language=en;-Duser.variant=en_US;-Duser.country=US;-Duser.region=US
+-Duser.language=en;-Duser.variant=en_US;-Duser.country=en_US
+
+-Duser.language=en;-Duser.variant=en_US;-Duser.country=US;-Duser.region=US
+
+Installing: java 22-amzn
+mv: cannot move '/c/Users/smoulem/.sdkman/tmp/out/jdk22.0.0_36' to '/c/Users/smoulem/.sdkman/candidates/java/22-amzn': Permission denied
+Done installing!
+
+Setting java 22-amzn as default.
+ln: failed to create symbolic link '/c/Users/smoulem/.sdkman/candidates/java/current': No such file or directory
+
+==
+https://duckduckgo.com/?q=emotional+music&va=i&t=ha&iar=videos&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dqfl9VX5fAdY
+==
+5, 8 do menu still use Menu_for_DATA.xml ? 
+9, 11, 16 , 
+17, 18, 20, 
+22, 23
+==
+created a branch in jenkins and checkout locally
+got vagrant on latest raya 
+create view in altair designer
+usage list selection ;; for list view 
+in designer, remove the create button 
+add grid, grid type: selection single, 
+scoop install nodejs-lts
+
+pact-write-credentials
+heywood-pact-write
+8qVsqmwAn1oZwX+3
+Username and password for pact-write
+username
+password
+#
+#
+write description key pair rotaition
+#
+\\ahnet.co.uk\departments\ServiceOperations\Team\Customers\Leicestershire
+
+
+
+http://localhost:16891/heywood_runtime/runtime
+http://10.7.56.255:16891/heywood_runtime/runtime
+http://alt-smoulem.altdev.ahnet.co.uk:16891/heywood_runtime/runtime
+
+http://alt-lwalsh.altdev.ahnet.co.uk:16891/heywood_runtime/runtime
+
+
+==
+created a branch in jenkins and checkout locally
+got vagrant on latest raya 
+create view in altair designer
+usage list selection ;; for list view 
+in designer, remove the create button 
+add grid, grid type: selection single, 
+scoop install nodejs-lts
+
+==
+* WIP - Uses wipTryUpgrade instead of tryUpgrade
+* WIP - Refactor method name to 'tryUpgrade'. Add lombok. Make most methods public or private, except MicroserviceJarRetriever.verifyUrlDomain
+* Refactor - move and rename objects. Update tests to handle new types.
+
+
+Trying to remove some of the 'side effects'.
+We do not use Optional in a 'best practices way': the optional checks are done in 'sub-methods' and then Optional(s) are passed around.
+A lot of setup for tests in UpgradeOrchestratorTests.
+Are tests coupled to implementation? 
+Still a lot of warnings from the IDE. 
+Added lombok: open for debate
+Renamed some types: Open for debate.
+Still a lot to refactor I think, maybe that can be done in waves.
+
+
+
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5999
+
+
+test_name=':AltairBenchmarking:runBatchBenchmarkingTests --tests "uk.co.heywood.testing.benchmarking.batch.BulkEDPJavaDocumentGenerationTest.timeBulkEDPJavaDocumentGeneration"'
+test_name=':AltairBenchmarking:runBatchBenchmarkingTests --tests "uk.co.heywood.testing.benchmarking.batch.BulkWordDocumentGenerationTest.timeBulkWordDocumentGeneration"'
+
+./gradlew $test_name | tee -a ../timing.log
+
+select * from spool_file_content where client_ref = 'IBM'
+select * from spool_file_content where client_ref = 'WANDSW'
+
+SM_ADMN_26730
+:AltairBenchmarking:runBatchBenchmarkingTests --tests "uk.co.heywood.testing.benchmarking.batch.BulkEDPDocumentGenerationTest.timeBulkEDPDocumentGeneration"
+\\bm-smoulem.altdev.ahnet.co.uk
+
+username=smoulem
+branch=integration
+mytime=$(date '+%Y%m%d%H%M%S')
+test_to_run="Bulk5000WordDocumentGenerationTest"
+
+./gradlew :AltairBenchmarking:runBatchBenchmarkingTests
+-DHost=bm-$username.altdev.ahnet.co.uk \
+-DBranch=$branch \
+-DdbCheckTime=false \
+-DdbLogTime=false \
+-DBenchmarkingName='dev' \
+-DbuildNumber='dev' \
+-DbuildTag=$mytime \
+-DbuildUrl=$mytime \
+-DaltairRelease='SM_ADMN_26730' \
+-DmasterSpoolDirectory="src\\test\\resources\\Master Spool Files" \
+-Dbrowser='Chrome' \
+-DuseSeleniumGrid=true \
+-DvalidationRun='' \
+-Djunit.jupiter.testclass.order.default='org.junit.jupiter.api.ClassOrderer$OrderAnnotation' \
+--tests "uk.co.heywood.testing.benchmarking.batch.$test_to_run"  | tee -a ~/Downloads/"${test_to_run}_${mytime}.log"
+
+-
+org.opentest4j.AssertionFailedError: ERROR: Error thrown: 'Calling 'ComboTest_selectItemByText('document_generate_print-2-42','002:Scheme : 002');' failed with 'SELENIUM JAVASCRIPT ERROR:Error: Option '002:Scheme : 002' is not present in combo: 'document_generate_print-2-42'. Actual options: '|001:Scheme : 001|009:Scheme : 009|101:Scheme : 101|T01:Scheme : T01|T09:Scheme : T09|TCM:Scheme : TCM|'''
+-
+// A N 79
+// A Z 79
+-
+// A B 551  BulkEDPJavaDocumentGenerationTest 
+// A C 1304  BulkEDPJavaDocumentGenerationTest
+// A Z 001 012 4824  BulkEDPJavaDocumentGenerationTest
+# EDP is it pdf?
+// A B 551
+// A C 1304
+// A Z 001 012 4824 
+# word doc 
+// A C 42 
+// A Z 71 
+// A Z location 00001 00031 4920  BulkWordJavaDocumentGenerationTest
+// A Z location 00001 00002 4577  BulkWordJavaDocumentGenerationTest
+// A Z scheme 00001 00009 4589  BulkWordJavaDocumentGenerationTest
+// A C scheme 00001 00009 2265  BulkWordJavaDocumentGenerationTest
+// A B scheme 00001 00009 953  BulkWordJavaDocumentGenerationTest
+// A B scheme 00001 00001 953  BulkWordJavaDocumentGenerationTest
+// A B scheme 00001 00001 location 00002 00032 94  BulkWordJavaDocumentGenerationTest
+
+- tested and deleted
+Bulk5000WordDocumentGenerationTest A to Z - timeout , screenshot taken 
+Screens.BulkWordDocuments.EMPLOYER_FROM.selectItem( "00001:Location 00001" )
+Screens.BulkWordDocuments.EMPLOYER_TO.selectItem( "00031:Location 00031" )
+
+==
+PP6430
+28/08/2024 15:43:21
+Show Thumbnails By Default
+		
+An error has occurred when preparing the document for viewing. You may be able to view the document using the "View Native" option.
+
+==
+--- config.local.yml
+vm:
+  template: win-2019-dev-R24_4-benchmarking
+
+chef:
+  attributes:
+    policy_group: R24_4
+==
+
+
+https://manistechmind.com/posts/k8-logstash
+== 
+--no-daemon --refresh-dependencies -DHost=10.7.57.80 -DBranch=integration -DdbLogTime=true -DdbCheckTime=true -DBenchmarkingName=win-2019 -DbuildNumber=94 -DbuildTag=jenkins-Altair-Delivery-WIN_2019-RunBenchmarkingTests-integration-391 -DbuildUrl=https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2019/job/RunBenchmarkingTests/job/integration/391/ "-DmasterSpoolDirectory=D:/jenkins/workspace/RunBenchmarkingTests_integration\AltairBenchmarking\src\test\resources\Master Spool Files" -DvalidationRun=false
+D:\jenkins\workspace\RunBenchmarkingTests_integration>gradlew.bat :AltairBenchmarking:clean :AltairBenchmarking:runBatchBenchmarkingTests --no-daemon --refresh-dependencies -DHost=10.7.57.80 -DBranch=integration -DdbLogTime=true -DdbCheckTime=true -DBenchmarkingName=win-2019 -DbuildNumber=94 -DbuildTag=jenkins-Altair-Delivery-WIN_2019-RunBenchmarkingTests-integration-391 -DbuildUrl=https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2019/job/RunBenchmarkingTests/job/integration/391/ "-DmasterSpoolDirectory=D:/jenkins/workspace/RunBenchmarkingTests_integration\AltairBenchmarking\src\test\resources\Master Spool Files" -DvalidationRun=false
+==
+# barcode differences  
+
+Bulk100EDPDocumentGenerationTest ## passes with extended filter 
+Bulk100EDPJavaDocumentGenerationTest
+
+Bulk100WordDocumentGenerationTest
+Bulk100WordJavaDocumentGenerationTest
+
+Bulk1000EDPDocumentGenerationTest ## passes with extended filter # 'PV6430 pdf' error when trying to view from UI 
+Bulk1000EDPJavaDocumentGenerationTest
+
+Bulk1000WordDocumentGenerationTest
+Bulk1000WordJavaDocumentGenerationTest
+
+Bulk5000EDPDocumentGenerationTest # fails, I saved the log 
+Bulk5000EDPJavaDocumentGenerationTest *
+
+Bulk5000WordDocumentGenerationTest # timeout 
+Bulk5000WordJavaDocumentGenerationTest # needs result of previous/above test 
+
+
+
+
+https://jenkins-altdev.services.aquilaheywood.co.uk/computer/CX%2DD%2DWBA%2DT%2D03/
+https://jenkins-altdev.services.aquilaheywood.co.uk/computer/CX%2DD%2DWBA%2DT%2D06/
+
+
+Edit Jenkins 
+https://heywood.atlassian.net/browse/ADMN-27236
+https://heywood.atlassian.net/browse/ADMN-27244
+https://heywood.atlassian.net/browse/ADMN-27252
+
+SM_ADMN-26276
+
+SRWORGEN_1000_W.00001
+could not view PV PU 6430 on vagrant 
+
+\\bm-smoulem.altdev.ahnet.co.uk\data\altair\integration\data\clients
+\\10.7.56.201\data\altair\integration\data\clients
+
+10.7.56.201
+3521
+CHFDB01
+IBM
+WANDSW
+
+
+ Windows Batch Script -- gradlew.bat :AltairBenchmarking:clean :AltairBenchmarking:runBatchBenchmarkingTests --no-daemon --refresh-dependencies -DHost=10.7.56.140 -DBranch=integration -DdbLogTime=true -DdbCheckTime=true -DBenchmarkingName=win-2019 -DbuildNumber=99 -DbuildTag=jenkins-Altair-Delivery-WIN_2019-RunBenchmarkingTests-integration-405 -DbuildUrl=https://jenkins-altdev.services.aquilaheywood.co.uk/job/Altair/job/Delivery/job/WIN_2019/job/RunBenchmarkingTests/job/integration/405/ "-DmasterSpoolDirectory=D:/jenkins/workspace/RunBenchmarkingTests_integration_2\AltairBenchmarking\src\test\resources\Master Spool Files" -DvalidationRun=false (self time 4h 42min 10s)
+
+
+Bulk1000WordDocumentGenerationTest
+Bulk5000WordDocumentGenerationTest 
+
+bm-smoulem
+jdbc:oracle:thin:@bm-smoulem:3521:CHFDB01
+WANDSW
+
+PS:
+
+After we spoke yesterday, I run again one of the BulkWordJavaDocumentGenerationTest (the fastest ⁠
+
+Smile
+
+ ).
+
+I cheked the list of docs, in the web UI, I sw a new 'PP6430WC' however no new 'SRWORGEN', only the ones generated on previous days (by other test classes) 
+
+
+
+
+SM_ADMN_26627
+
+devopsadmin@CX-D-LBA-T-03.altdev.ahnet.co.uk
+
+
+docker run -d -v jenkins_lts_alpine_home:/var/jenkins_home -p 8888:8080 -p 55555:50000 jenkins/jenkins:lts-alpine
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+
+Upgrade Sandbox Jenkins
+https://git.services.aquilaheywood.co.uk/scm/~smoulem/sandboxjenkins.git
+*/SM_ADMN_26627
+Jenkinsfile-sandbox-upgrade
+Jenkinsfile-sandbox
+Jenkinsfile-devops
+
+helm --kube-context cluster02 upgrade --install devops-test -f values-devops.yaml . 
+
+https://git.services.aquilaheywood.co.uk/projects/DVO/repos/jenkins/pull-requests/5/overview
+
+jenkins/jenkins:2.452.3-alpine 
+jenkins/jenkins:2.452.3-lts-alpine 
+
+jenkins/jenkins:2.462.2-lts-alpine
+
+
+
+== former upgrade jira ticket with tested jobs: https://heywood.atlassian.net/browse/ADMN-23100
+
+job ran on sandbox jenkins:
+ - seed job (multiple times)
+
+job ran on devops jenkins:
+ - Chef mono repo - Altair mono repo - branch raya 
+ - Terraform: build-agents
+ - Helm: Jenkins
+ - DevOps: housekeeping
+
+Dev Jenkins Jobs Tested:
+ -
+Delete Branch
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Altair/job/Maintenance/job/DeleteBranch/job/SM_ADMN_26730/
+Build Microservice Upgrade Agent
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Microservices/job/Build/job/buildMicroserviceUpgradeAgent/
+
+Run Microservice Upgrade Agent Integration Tests
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Microservices/job/Test/job/Runmicroserviceupgradeagentintegrationtests/
+Build
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Clients/job/Altair/job/Build/
+Validate Menus
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Clients/job/Altair/job/Validation/job/ValidateMenus/
+Create Pod
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Clients/job/Altair/job/Deployment/job/DeployAltairImage/view/tags/job/ESUSSX/
+Delete Pod
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Clients/job/Altair/job/Deployment/job/DeleteClientServer/view/tags/job/ESUSSX/
+Build Altair
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Altair/job/Build/job/BuildAltair/
+AMT Build Pipeline
+https://jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/AMT/job/AMT_PIPELINE/job/raya/
+
+
+
+
+docker pull nexus-altdev.services.aquilaheywood.co.uk/jenkins:latest
+latest: Pulling from jenkins
+Digest: sha256:1e9d7ea306137088c29c58a123e9384e1957a3a36a5258619895684011d10b17
+Status: Image is up to date for nexus-altdev.services.aquilaheywood.co.uk/jenkins:latest
+nexus-altdev.services.aquilaheywood.co.uk/jenkins:latest
+
+
+on sandbox: 
+create a new docker image DANGEROUS!!
+https://jenkins-sandbox.services.aquilaheywood.co.uk/job/Sandbox/job/JenkinsUpgradeTest/
+
+configure jenkins : can restore helm values to 'latest' ==> run it => delete the pod 
+https://jenkins-sandbox.services.aquilaheywood.co.uk/job/Sandbox/job/ConfigureJenkins/
+
+== errors on devops-jenkins == 
+Oh sorry, that wasn't very helpful of me! https://devops-jenkins-altdev.services.aquilaheywood.co.uk/job/DevOps/job/housekeeping/job/master/206/
+ 
+https://devops-jenkins-altdev.services.aquilaheywood.co.uk/job/DevOps/job/check-vsphere-password-expiry/job/master/5/
+ 
+
+ == configure jenkins devops 
+ https://devops-jenkins-altdev.services.aquilaheywood.co.uk/view/all/job/Helm/job/jenkins/
+
+ == devops housekeeping => works on old Jenkins but not on new 
+ https://git.services.aquilaheywood.co.uk/projects/DVO/repos/housekeeping/browse
+
+ == conversation: upgrade pipelines to use jdk17 
+ https://teams.microsoft.com/l/message/19:5a10d4c4069a40a3a513732230c07fb5@thread.skype/1727778513660?tenantId=8d50a55f-df74-4eb0-85c5-96da05e35da3&groupId=50f491a3-1b31-44ab-a4a2-087beb7769cf&parentMessageId=1727778513660&teamName=OG_AltrinchamDevelopers&channelName=General&createdTime=1727778513660
+
+
+10/10/2024 raya's refinement, workflow and tasks for employment aggregation. when new started is created. 
+it seems we have a context when 'doing' a task. in that context we can get, for example, the 'employment source'.
+Samuel to talk to:
+brice or 
+omeed about 
+how to pass result to next task 
+
+
+=
+auot task similar to ACOMP241
+==
+16/10/2024 15:00  1-2-1 
+concerns 
+Word document merge failing to correctly resolve Mergefield logic
+
+Automate file modifications on escrow test machine
+
+evidence tickets we've worked on 
+evidence comms with team 
+reach out to people
+more involvement in refinements, driving the conversation  
+
+=
+I think we can identify automatically generated tasks with: 
+
+TaskEntry has autoCreate: not sure about it 
+TaskEntry has deleted property: marked for deletion 
+TaskEntry has MemberTask which has employmentRef 
+TaskEntry has TaskParameters which has RuleTaskParam whic has 
+-
+FollowOnTaskParameters has autoCreate 
+
+in AltairServices
+Memo.java 
+a memo can be updated, currently I do not think it updates the employmentRef however I think that could be added. 
+a memo can be marked for deletion and deleted. 
+the status of a memo can be changed. 
+ReadOnlyTaskDetails.java 
+the state of actions can be updated, cannot be deleted I think. 
+Task.java 
+has a list of FollowOnTask, can they be auto created/generated?
+Task -> TaskEntry -> TaskParameters -> RuleTaskParam
+                                    -> List of RuleTaskParamAutoExecutableAction // The auto executable task actions associated with this task
+        TaskEntry.autoCreate // Can this task be auto-created? Used only for follow-on tasks
+        TaskEntry.deleted 
+
+
+-
+what is a holding task? // holding tasks are stand alone tasks 
+RuleTaskParam.taskHoldStatus?
+
+TaskEntry.processed // has this task been processed 
+TaskEntry.initialiseNewTask 
+TaskEntry.determineTaskDefaults 
+-
+
+morning, how are you?
+I'm trying to find answers to a couple of questions regarding tasks.
+Below are the questions and anwers; would you say I got it right?
+
+Can we identify automatically generated tasks?
+Yes, TaskEntry has a 'autoCreate' field. 
+MEMBER_TASK table, field CREATED_BY and EVENT_DATE // 2 tables with the same name ??? 
+                                                  // if the task is created by an event, we can probably filter using the event_name 
+
+Can we delete automatically generated tasks?
+Yes, once we have identified those tasks, they can be deleted.
+
+Can we easily transfer tasks across employments? 
+Yes, MemberTask has a field 'employmentRef'
+
+Can we identify if a task is in progress?
+Yes, Taks has a 'isCompleted' method (which calls MemberTask.getCompleted).
+
+What is the status workflow / behaviour of automatically generated tasks?
+Not sure. Taks has a 'determineDefaults' method, not sure whether that sets a default status.
+
+-
+Questions
+
+Can we identify automatically generated tasks?
+
+Can we delete automatically generated tasks? 
+
+Can we easily transfer tasks across employments? 
+
+Can we identify if a task is in progress?
+
+What is the status workflow / behaviour of automatically generated tasks?
+-
+Can we identify automatically generated tasks?
+
+It seems  there is no universal way to identify 'automatically generated tasks'. 
+
+However, the MEMBER_TASK table has a field CREATED_BY; we could use that field to filter the events we are interested in (for example if there is an event that creates new starter tasks or NDT tasks).
+
+When a user completes any task in a process that will usually 'automatically' generate the next task in the process.
+
+Can we delete automatically generated tasks? 
+
+Once we have filtered tasks by 'created_by', we can mark them for deletion.
+
+For example TaskEntry has a deleted property: marked for deletion.
+
+Can we easily transfer tasks across employments? 
+
+I think it is possible:
+
+TaskEntry has MemberTask which has employmentRef, if that is the employment, we could edit it.
+
+Can we identify if a task is in progress?
+
+I think so, Taks has a isCompleted method (which calls MemberTask.getCompleted).
+
+TaskEntry has methods to check for completion.
+
+We can identify if tasks are waiting for a reply. 
+
+What is the status workflow / behaviour of automatically generated tasks?
+
+Not sure; that probably varies. 
+
+Some tasks can execute (and finish) automatically.
+
+Tasks have rules about their defaults: Task has a determineDefaults method.
+
+Depending on their creation rules, specific task will have different actions, checklist, ‘due for action’, 'due for completion', etc.
+
+-
+
+nigiri prawn
+uramaki prawn crunch 
+
+nigiri prawn
+katsu breaded prawn 
